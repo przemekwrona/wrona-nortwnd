@@ -32,6 +32,7 @@ public class EmployeeService {
                 .employeeResponses(employees)
                 .page(page)
                 .total(employeeRepository.count() / PAGE_SIZE)
+                .size(employeeRepository.count())
                 .build();
     }
 }

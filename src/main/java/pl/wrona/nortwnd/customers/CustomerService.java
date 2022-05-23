@@ -37,7 +37,27 @@ public class CustomerService {
     }
 
     public void createCustomer(Customer customer) {
-        customerRepository.insert(customer);
+        try {
+            customerRepository.insert(customer);
+        } catch (SQLException sqlException) {
+            log.error(sqlException.getMessage());
+        }
+    }
+
+    public void deleteCustomer(String customerId) {
+        try {
+            customerRepository.delete(customerId);
+        } catch (SQLException sqlException) {
+            log.error(sqlException.getMessage());
+        }
+    }
+
+    public void updateCustomer(String customerId, Customer customer) {
+        try {
+            customerRepository.update(customerId, customer);
+        } catch (SQLException sqlException) {
+            log.error(sqlException.getMessage());
+        }
     }
 
 }

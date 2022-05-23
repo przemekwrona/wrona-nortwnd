@@ -21,7 +21,8 @@ public class WronaNortwndApplication {
 
         config.setJdbcUrl("jdbc:sqlserver://127.0.0.1:1433;database=NORTHWND");
         config.setUsername("pwrona");
-        config.setPassword("welcome2");
+        config.setPassword("welcome1");
+        config.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
         return new HikariDataSource(config);
     }
